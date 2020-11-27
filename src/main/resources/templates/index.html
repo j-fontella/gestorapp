@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de operações mensais!</h1>
+        <h2>Com este programa, você pode calcular seus ganhos e gastos de um mês e descobrir se a sua saúde financeira está boa.</h2>
+        <a href="cadastrarGanho">Cadastre um ganho</a>
+        <a href="cadastrarGasto">Cadastre um gasto</a>
+        <div class="row" th:each="operacao : ${operacao}">
+       
+                <p class="ops">Descrição: <span th:text="${operacao.descricao}"></span></p>
+                <p class="ops">R$: <span th:text="${operacao.valor}"></span></p>
+				<p class="ops">Categoria: <span th:text="${operacao.categoria}"></span></p>
+
+        </div>
+		<p th:text="${saldo}" class="saldo row"></p>
+
+    </div>
+</body>
+</html>
